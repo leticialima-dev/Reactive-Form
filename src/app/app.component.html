@@ -1,0 +1,157 @@
+
+<div class="wrapper">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Formulário de Inscrição</mat-card-title>
+  </mat-card-header>
+    <mat-card-content
+      action="#"
+      id="main-form"
+      (ngSubmit)="submit()"
+      [formGroup]="newForm"
+    >
+    <form>
+      <div class="form-angular row" >
+        <mat-form-field appearance="fill" id="grow" >
+          <mat-label>Nome</mat-label>
+          <input id="grow" type="text" matInput placeholder="Digite seu nome."
+          formControlName="name"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['name'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['name'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-angular row">        
+        <mat-form-field appearance="fill" id="grow" >
+          <mat-label>Sobrenome</mat-label>
+          <input type="text" matInput placeholder="Digite seu sobrenome."
+          formControlName="lastname"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['lastname'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['lastname'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>  
+      <div class="form-angular row" > 
+        <mat-form-field appearance="fill" id="grow" >
+          <mat-label>Username</mat-label>
+          <input type="text" matInput placeholder="Username"
+          formControlName="user">
+          <mat-error>
+            <span *ngIf="newForm.controls['user'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['user'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-angular row">
+        <mat-form-field appearance="fill" id="grow"  >
+          <mat-label>Telefone</mat-label>
+          <input type="tel" matInput placeholder="Digite seu telefone"
+          formControlName="phone"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['phone'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['phone'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill" id="grow"  >
+          <mat-label>CPF</mat-label>
+          <input type="string" matInput placeholder="Digite seu CPF"
+          formControlName="cpf"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['cpf'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['cpf'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="form-angular row"> 
+        <mat-form-field appearance="fill" id="grow" >
+          <mat-label>Endereço</mat-label>
+          <input type="text" matInput placeholder="Digite seu endereço."
+          formControlName="address"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['address'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['address'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field> 
+        <mat-form-field appearance="fill"id="grow"  >
+          <mat-label>Complemento</mat-label>
+          <input type="texto" matInput placeholder="Digite o complemento do endereço."
+          formControlName="address2"
+          >
+        </mat-form-field>
+      </div>
+        <div class="form-angular row">
+        <mat-form-field appearance="fill" id="grow" >
+          <mat-label>Digite sua Senha</mat-label>
+          <input type="password" matInput placeholder="Digite sua senha."
+          formControlName="password"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['password'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['password'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field  appearance="fill"  id="grow" >
+          <mat-label>Confirme sua senha</mat-label>
+          <input type="confirmpass" matInput placeholder="Confirme a senha digitada."
+          formControlName="confirmpass"
+          >
+          <mat-error>
+            <span *ngIf="newForm.controls['confirmpass'].getError('required')">
+              Você não preencheu o campo corretamente.
+            </span>
+            <span *ngIf="newForm.controls['confirmpass'].getError('minlength')">
+              Este campo é obrigatório!
+            </span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="form-row col">
+        <button  mat-raised-button
+        type="submit"
+         color="accent"
+         id="grow-btn"
+         [disabled]="newForm.invalid" (click)="submit()">Cadastrar</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+</div>
+ 
+
+
+
